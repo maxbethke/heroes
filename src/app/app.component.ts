@@ -6,10 +6,15 @@ import { Component, VERSION } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  AppTitle = getAppTitle();
-  ngVersion = "Angular " + VERSION.major;
-}
+  appTitle: string;
+  ngVersion: string;
 
-var getAppTitle = () => {
-  return "My first Angular App";
-};
+  constructor() {
+    this.appTitle = this.getAppTitle();
+    this.ngVersion = "Angular " + VERSION.major;
+  }
+
+  getAppTitle() {
+    return "My first Angular App";
+  }
+}
