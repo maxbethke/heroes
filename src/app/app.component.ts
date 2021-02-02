@@ -8,8 +8,6 @@ import { Component, VERSION } from "@angular/core";
 export class AppComponent {
   AppTitle = getAppTitle();
   ngVersion = "Angular " + VERSION.major;
-
-  constructor
 }
 
 var getAppTitle = () => {
