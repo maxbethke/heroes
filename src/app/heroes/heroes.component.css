@@ -1,0 +1,40 @@
+.heroes {
+  display: flex;
+  flex-flow: column;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0px;
+  border: 1px solid gray;
+  box-shadow: 1px 1px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero + .hero {
+  margin-top: 0.5em;
+}
+
+.hero:hover {
+  background: darkgray;
+  color: white;
+}
+
+.hero.selected {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero__id {
+  justify-self: flex-start;
+  display: inline-block;
+  background: gray;
+  color: white;
+  padding: 0.5em;
+}
