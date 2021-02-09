@@ -1,1 +1,13 @@
-/* Add application styles & imports to this file! */
+:root {
+  --clr-primary: darkslategray;
+  --clr-secondary: aquamarine;
+  --fnt-accent: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
