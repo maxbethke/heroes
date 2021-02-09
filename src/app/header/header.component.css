@@ -46,13 +46,12 @@
   text-transform: uppercase;
 }
 
-.topnav__link:hover {
-  background-color: var(--clr-primary);
-  color: var(--clr-secondary);
+.topnav__link:hover,
+.topnav__link:focus {
+  text-decoration: underline;
 }
 
 .topnav__link.active {
   background-color: var(--clr-primary);
   color: var(--clr-secondary);
-  border-bottom: 5px solid var(--clr-secondary);
 }

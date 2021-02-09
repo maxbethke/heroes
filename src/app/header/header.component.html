@@ -5,7 +5,6 @@
 	</div>
 </div>
 <nav class="topnav">
-	<a [class.active]="currentRoute == 'heroes'" routerLink="/heroes" class="topnav__link">Our <b>Heroes</b></a>
-	<a [class.active]="currentRoute == 'dashboard'" routerLink="/dashboard" class="topnav__link">Dashboard</a>
-	{{currentRoute}}
+	<a [class.active]="currentRoute == '/heroes'" routerLink="/heroes" class="topnav__link">Our <b>Heroes</b></a>
+	<a [class.active]="currentRoute == '/dashboard'" routerLink="/dashboard" class="topnav__link">Dashboard</a>
 </nav>

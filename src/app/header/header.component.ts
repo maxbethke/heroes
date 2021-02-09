@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -9,8 +9,12 @@ import { Router } from "@angular/router";
 export class HeaderComponent implements OnInit {
   currentRoute: string;
 
-  constructor(private router: Router) {
-    this.currentRoute = router.url;
+  constructor(router: Router) {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url;
+      }
+    });
   }
 
   ngOnInit() {}
