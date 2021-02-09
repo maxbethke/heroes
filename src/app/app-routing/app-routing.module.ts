@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes, Router, NavigationEnd } from "@angular/router";
+import { RouterModule, Routes} from "@angular/router";
 
 import { HeroesComponent } from "../heroes/heroes.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
@@ -16,6 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-  constructor() {}
-}
+export class AppRoutingModule {}
