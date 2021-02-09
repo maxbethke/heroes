@@ -1,0 +1,34 @@
+.messages__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.messages__title {
+  margin: 0;
+}
+
+.messages__message:nth-child(9) {
+  opacity: 70%;
+  font-size: 0.7em;
+}
+
+.messages__message:nth-child(8) {
+  opacity: 80%;
+  font-size: 0.8em;
+}
+
+.messages__message:nth-child(7) {
+  opacity: 90%;
+  font-size: 0.9em;
+}
+
+.messages__message {
+  margin: 0;
+}
+
+.messages__timestamp {
+  font-weight: bold;
+}
