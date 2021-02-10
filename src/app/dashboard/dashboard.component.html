@@ -1,6 +1,12 @@
 <h3>Top Heroes</h3>
 <div class="heroes">
-	<a class="heroes__hero" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
-		<span class="hero__name">{{hero.name}}</span>
-	</a>
+	<div class="heroes__hero" *ngFor="let hero of heroes">
+		<div class="hero__head">
+			<h2 class="hero__name">{{hero.name}}</h2>
+			<a class="hero__username" routerLink="/hero/{{hero.id}}">{{hero.username}}</a>
+		</div>
+		<div class="hero__body">
+			<span class="hero__name">Some interesting stuff about {{hero.name}}</span>
+		</div>
+	</div>
 </div>
