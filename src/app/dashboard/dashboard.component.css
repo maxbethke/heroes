@@ -13,13 +13,25 @@
   border-radius: 5px;
 }
 
-.hero__head {
+.hero__head,
+.hero__foot{
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.hero__foot {
+  background-color: var(--clr-primary);
+  justify-content: center;
+}
+
+.hero__foot .hero__profile {
+  color: var(--clr-secondary);
+  text-decoration: none;
+  font-weight: 900;
 }
 
 .hero__head > * {
@@ -36,6 +48,19 @@
 
 .hero__body {
   padding: 1em;
+}
+
+.hero__skills .skills__heading {
+  margin: 0;
+}
+
+.hero__skills .badge {
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 0.3em;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0.5em;
 }
 
 .heroes__hero + .heroes__hero {
