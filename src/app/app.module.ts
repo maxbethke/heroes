@@ -12,7 +12,9 @@ import { MessageService } from "./message.service";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { HeaderComponent } from "./header/header.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { HeroSkillsComponent } from './hero-skills/hero-skills.component';
+import { HeroSkillsComponent } from "./hero-skills/hero-skills.component";
+import { BackofficeComponent } from "./backoffice/backoffice.component";
+import { UserAuthService } from "./user-auth.service";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -23,9 +25,10 @@ import { HeroSkillsComponent } from './hero-skills/hero-skills.component';
     MessagesComponent,
     HeaderComponent,
     DashboardComponent,
-    HeroSkillsComponent
+    HeroSkillsComponent,
+    BackofficeComponent
   ],
   bootstrap: [AppComponent],
-  providers: [HeroService, MessageService]
+  providers: [HeroService, MessageService, UserAuthService]
 })
 export class AppModule {}

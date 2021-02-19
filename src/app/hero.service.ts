@@ -78,8 +78,8 @@ export class HeroService {
       tap(_ => {
         this.log("fetched heroes");
       }),
-      map((heroes: Hero[]) => this.mutateHeroes(heroes, this.addSkillsToHero)),
-      map((heroes: Hero[]) => this.mutateHeroes(heroes, this.splitName)),
+      map((heroes: Hero[]) => this.mutateHeroes(heroes, heroes => this.addSkillsToHero(heroes))),
+      map((heroes: Hero[]) => this.mutateHeroes(heroes, heroes => this.splitName(heroes))),
       catchError(this.handleError<Hero[]>("getHeroes", []))
     );
   }
