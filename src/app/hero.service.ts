@@ -78,7 +78,7 @@ export class HeroService {
       tap(_ => {
         this.log("fetched heroes");
       }),
-      map(this.addSkillsToHeroes),
+      map((heroes: Hero[]) => this.addSkillsToHeroes(heroes)),
       catchError(this.handleError<Hero[]>("getHeroes", []))
     );
   }
@@ -88,7 +88,7 @@ export class HeroService {
       tap(_ => {
         this.log("fetched hero " + id);
       }),
-      map(this.addSkillsToHero),
+      map((hero: Hero) => this.addSkillsToHero(hero)),
       catchError(this.handleError<Hero>("getHero"))
     );
   }
