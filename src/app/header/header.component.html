@@ -1,10 +1,26 @@
 <div class="header">
-	<div class="brand">
-		<img src="//unsplash.it/50/50" alt="HEROES HR Services Logo" class="brand__logo"/>
-		<span class="brand__name"><span class="name--large">HEROES</span> HR Services</span>
-	</div>
+  <div class="brand">
+    <img
+      src="//source.unsplash.com/50x50/?company logo"
+      alt="HEROES HR Services Logo"
+      class="brand__logo"
+    />
+    <span class="brand__name"
+      ><span class="name--large">HEROES</span> HR Services</span
+    >
+  </div>
 </div>
 <nav class="topnav">
-	<a [class.active]="currentRoute == '/heroes'" routerLink="/heroes" class="topnav__link">Our <b>Heroes</b></a>
-	<a [class.active]="currentRoute == '/dashboard'" routerLink="/dashboard" class="topnav__link">Dashboard</a>
+  <a
+    [class.active]="currentRoute == '/heroes'"
+    routerLink="/heroes"
+    class="topnav__link"
+    >Our <b>Heroes</b></a
+  >
+  <a
+    [class.active]="currentRoute == '/dashboard'"
+    routerLink="/dashboard"
+    class="topnav__link"
+    >Dashboard</a
+  >
 </nav>

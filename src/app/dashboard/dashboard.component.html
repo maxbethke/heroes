@@ -1,17 +1,20 @@
 <h3>Top Heroes</h3>
 <div class="heroes">
-	<div class="heroes__hero" *ngFor="let hero of heroes">
-		<div class="hero__head">
-			<h2 class="hero__name">{{hero.name}}</h2>
-			<a class="hero__username" routerLink="/hero/{{hero.id}}">{{hero.username}}</a>
-		</div>
-		<div class="hero__body">
-			<div class="hero__skills">
-				<p class="skills__heading">Top Skills:</p>
-				<span class="badge" *ngFor="let skill of hero.skills">{{skill}}</span>
-			</div>
-		</div>
-		<div class="hero__foot">
-			<a class="hero__profile" routerLink="/hero/{{hero.id}}">Hire</a>
-		</div>
-	</div>
+  <div class="heroes__hero" *ngFor="let hero of heroes">
+    <div class="hero__head">
+      <h2 class="hero__name">{{hero.name}}</h2>
+      <a class="hero__username" routerLink="/hero/{{hero.id}}"
+        >{{hero.username}}</a
+      >
+    </div>
+    <div class="hero__body">
+      <p>Top Skills:</p>
+      <app-hero-skills [hero]="hero"></app-hero-skills>
+    </div>
+    <div class="hero__foot">
+      <a class="hero__profile" routerLink="/hero/{{hero.id}}"
+        >Hire {{hero.firstname}}</a
+      >
+    </div>
+  </div>
+</div>

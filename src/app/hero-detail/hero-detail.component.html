@@ -1,12 +1,48 @@
-<div *ngIf="hero">
+<div class="hero" *ngIf="hero">
+  <div class="hero__header">
+    <div class="header__name">
+      <h2 class="name__realname">I am {{hero.name}}</h2>
+      <a class="name__username" routerLink="/hero/{{hero.id}}"
+        >{{hero.username}}</a
+      >
+    </div>
+    <img
+      class="header__profilePicture"
+      src="//source.unsplash.com/100x100/?face"
+      alt="Profile Picture"
+    />
+  </div>
 
-	<h2>{{hero.name | uppercase}} Details</h2>
-	<div><span>id: </span>{{hero.id}}</div>
-	<div>
-		<label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </label>
-	</div>
+  <div class="hero__skills">
+    <h3>I am an expert in:</h3>
+    <app-hero-skills [hero]="hero"></app-hero-skills>
+  </div>
 
+  <div class="hero__location">
+    <h3>This is where I live:</h3>
+    {{hero.address.street}} {{hero.address.suite}}<br />
+    {{hero.address.zipcode}} {{hero.address.city}}
+  </div>
+
+  <div class="hero__contact">
+    <h3>Want to contact me?</h3>
+    E-Mail: {{hero.email}}<br />
+    Phone: {{hero.phone}}<br />
+    Web: {{hero.website}}<br />
+  </div>
+
+  <div class="hero__techicalDetails">
+    <div class="technicalDetails__item">id: {{hero.id}}</div>
+    <div class="technicalDetails__item">
+      <label>
+        name: <input [(ngModel)]="hero.name" placeholder="name" />
+      </label>
+    </div>
+    <div class="technicalDetails__item">Handle: @{{hero.username}}</div>
+    <div class="technicalDetails__item">
+      Adress: {{hero.address.street}} {{hero.address.suite}}<br />
+      {{hero.address.zipcode}} {{hero.address.city}}
+    </div>
+  </div>
 </div>
 <a class="button" (click)="goBack()">Back</a>

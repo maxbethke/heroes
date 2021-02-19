@@ -12,6 +12,7 @@ import { MessageService } from "./message.service";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { HeaderComponent } from "./header/header.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { HeroSkillsComponent } from './hero-skills/hero-skills.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -21,7 +22,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
     HeroDetailComponent,
     MessagesComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSkillsComponent
   ],
   bootstrap: [AppComponent],
   providers: [HeroService, MessageService]

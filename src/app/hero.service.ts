@@ -78,7 +78,8 @@ export class HeroService {
       tap(_ => {
         this.log("fetched heroes");
       }),
-      map((heroes: Hero[]) => this.addSkillsToHeroes(heroes)),
+      map((heroes: Hero[]) => this.mutateHeroes(heroes, this.addSkillsToHero)),
+      map((heroes: Hero[]) => this.mutateHeroes(heroes, this.splitName)),
       catchError(this.handleError<Hero[]>("getHeroes", []))
     );
   }
@@ -89,15 +90,26 @@ export class HeroService {
         this.log("fetched hero " + id);
       }),
       map((hero: Hero) => this.addSkillsToHero(hero)),
+      map((hero: Hero) => this.splitName(hero)),
       catchError(this.handleError<Hero>("getHero"))
     );
   }
 
-  private addSkillsToHeroes(heroes: Hero[]) {
+  private mutateHeroes(heroes: Hero[], mutator) {
     heroes.forEach((hero: Hero) => {
-      hero = this.addSkillsToHero(hero);
+      hero = mutator(hero);
     });
     return heroes;
+  }
+
+  private splitName(hero: Hero) {
+    let heroNames: string[] = hero.name.split(" ");
+
+    hero.firstname = heroNames.splice(0, 1).join(" ");
+    hero.lastname = heroNames.splice(heroNames.length - 1, 1).join(" ");
+    hero.middlename = heroNames.join(" ");
+
+    return hero;
   }
 
   private addSkillsToHero(hero: Hero) {

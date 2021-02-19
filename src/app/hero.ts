@@ -1,6 +1,9 @@
 export interface Hero {
   id: number;
   name: string;
+  firstname: string;
+  middlename: string;
+  lastname: string;
   username: string;
   email: string;
   address: {

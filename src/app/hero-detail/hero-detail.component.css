@@ -1,0 +1,28 @@
+.hero {
+}
+
+.hero__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__name {
+  display: flex;
+  flex-flow: column;
+}
+
+.header__profilePicture {
+  border-radius: 50%;
+}
+
+.name__realname {
+  margin: 0;
+}
+
+.name__username {
+  font-style: italic;
+}
+
+.name__username::before {
+  content: "@";
+}

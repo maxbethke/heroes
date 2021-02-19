@@ -1,0 +1,19 @@
+.hero__skills .badge {
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 0.3em;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+.skills__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.list__item {
+  list-style-type: none;
+}
