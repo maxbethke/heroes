@@ -78,12 +78,7 @@ export class HeroService {
       tap(_ => {
         this.log("fetched heroes");
       }),
-      map((heroes: Hero[]) => {
-        heroes.forEach((hero: Hero) => {
-          hero.skills = this.getSkills(Math.ceil(Math.random() * 10));
-        });
-        return heroes;
-      }),
+      map(this.addSkillsToHeroes),
       catchError(this.handleError<Hero[]>("getHeroes", []))
     );
   }
@@ -93,12 +88,21 @@ export class HeroService {
       tap(_ => {
         this.log("fetched hero " + id);
       }),
-      map((hero: Hero) => {
-        hero.skills = this.getSkills(Math.ceil(Math.random() * 10));
-        return hero;
-      }),
+      map(this.addSkillsToHero),
       catchError(this.handleError<Hero>("getHero"))
     );
+  }
+
+  private addSkillsToHeroes(heroes: Hero[]) {
+    heroes.forEach((hero: Hero) => {
+      hero = this.addSkillsToHero(hero);
+    });
+    return heroes;
+  }
+
+  private addSkillsToHero(hero: Hero) {
+    hero.skills = this.getSkills(Math.ceil(Math.random() * 10));
+    return hero;
   }
 
   private getSkills(count: number): string[] {
