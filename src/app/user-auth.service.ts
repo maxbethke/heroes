@@ -1,7 +1,10 @@
 import { Injectable } from "@angular/core";
+import { JwtHelper } from "angular2-jwt";
 
 import { MessageService } from "./message.service";
 import { User } from "./user";
+
+const AUTH_TOKEN = "heroes-hr_auth-token"
 
 @Injectable({
   providedIn: "root"
@@ -10,7 +13,10 @@ export class UserAuthService {
   user: User;
   isLoggedIn: boolean = false;
 
-  constructor(private messageService: MessageService) {}
+  constructor(
+    private messageService: MessageService,
+    public jwtHelper: JwtHelper
+  ) {}
 
   logIn(username: string, password: string) {
     if (this.verify(username, password)) {
@@ -43,5 +49,10 @@ export class UserAuthService {
     //This function woulde send an HTTP Request to the authentication server.
     //As this is just and example, we just valite the user in any case.
     return true;
+  }
+
+  public isAuthenticated(): boolean {
+    const token = localStorage.getItem(AUTH_TOKEN);
+    return !this.jwtHelper.isTokenExpired(token);
   }
 }
