@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { JwtHelper } from "angular2-jwt";
+import { tokenNotExpired } from 'angular2-jwt';
 
 import { MessageService } from "./message.service";
 import { User } from "./user";
@@ -15,7 +15,6 @@ export class UserAuthService {
 
   constructor(
     private messageService: MessageService,
-    public jwtHelper: JwtHelper
   ) {}
 
   logIn(username: string, password: string) {
@@ -52,7 +51,6 @@ export class UserAuthService {
   }
 
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem(AUTH_TOKEN);
-    return !this.jwtHelper.isTokenExpired(token);
+    return tokenNotExpired(AUTH_TOKEN);
   }
 }

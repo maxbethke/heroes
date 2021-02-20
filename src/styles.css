@@ -16,3 +16,32 @@ body {
 p {
   margin: 0;
 }
+
+.alert {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.alert--hint {
+  background: var(--clr-secondary);
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 0.3em;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.form .button {
+  background: var(--clr-primary);
+  color: var(--clr-secondary);
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.form .button {
+  text-align: center;
+}

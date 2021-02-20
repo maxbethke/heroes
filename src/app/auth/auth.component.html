@@ -1,0 +1,21 @@
+<div class="auth">
+	<h1>Log in</h1>
+	<p>For this part of the Site, you need to be authenticated</p>
+	<div class="form auth__form">
+		<div class="form__item">
+			<label for="username">Name</label>
+			<input class="form__username" id="username" [(ngModel)]="username" placeholder="name" />
+    </div>
+			<div class="form__item">
+				<label for="passsword">Password</label>
+				<input class="form__password" id="password" [(ngModel)]="password" />
+    </div>
+				<div class="form__item">
+					<a class="button button--center" (click)="logIn()">Log In</a>
+				</div>
+			</div>
+			<div class="alert alert--hint auth__hint">
+				As this is a demo environment, you can authenticate with any combination of username and passwort you
+				like :)
+			</div>
+		</div>

@@ -1,0 +1,14 @@
+.auth__form,
+.form__item {
+  display: flex;
+  flex-flow: column;
+}
+
+.auth__form {
+  width: 15em;
+  margin: 1em auto;
+}
+
+.form__item + .form__item {
+  margin-top: 1em;
+}

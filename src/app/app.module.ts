@@ -18,6 +18,7 @@ import { HeroSkillsComponent } from "./hero-skills/hero-skills.component";
 import { BackofficeComponent } from "./backoffice/backoffice.component";
 import { UserAuthService } from "./user-auth.service";
 import { AuthGuardService } from './auth-guard.service';
+import { AuthComponent } from './auth/auth.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
@@ -33,13 +34,15 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     HeaderComponent,
     DashboardComponent,
     HeroSkillsComponent,
-    BackofficeComponent
+    BackofficeComponent,
+    AuthComponent
   ],
   bootstrap: [AppComponent],
   providers: [
     HeroService,
     MessageService,
     UserAuthService,
+    AuthGuardService,
     {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,
