@@ -73,7 +73,9 @@ export class HeroService {
   }
 
   private getRandomSkill(): string {
-    return Skill[Math.floor(Math.random() * Object.keys(Skill).length)];
+    let skillIndex = Math.floor(Math.random() * Object.keys(Skill).length);
+    console.log(Object.keys(Skill));
+    return Skill[skillIndex];
   }
 
   private log(message: string) {
