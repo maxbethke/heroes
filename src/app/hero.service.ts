@@ -5,62 +5,7 @@ import { catchError, map, tap } from "rxjs/operators";
 
 import { Hero } from "./hero";
 import { MessageService } from "./message.service";
-
-const SKILL_TAGS: string[] = [
-  "VBA",
-  "HTML",
-  "CSS",
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "JS",
-  "ESNext",
-  "PHP",
-  "Magento",
-  "Wordpress",
-  "Spyker",
-  "Angular",
-  "AngularJS",
-  "JQuery",
-  "Vue.js",
-  "Symfony",
-  "CakePHP",
-  "Zend",
-  "Business Intelligence",
-  "IT Security",
-  "ASP.NET",
-  "Node.js",
-  "Lavavel",
-  "Web Design",
-  "Excel",
-  "MS Office",
-  "Getting Coffee",
-  "PowerBI",
-  "MariaDB",
-  "MongoDB",
-  "SQL",
-  "MySQL",
-  "PostgreSQL",
-  "Big Data",
-  "AI",
-  "Machine Learning",
-  "Data Science",
-  "Business Management",
-  "Customer Service",
-  "SASS",
-  "LESS",
-  "C++",
-  "C",
-  "C#",
-  ".NET",
-  "Python",
-  "Robotics",
-  "Scrum",
-  "Kanban",
-  "Project Management",
-  "HR",
-  "People Services"
-];
+import { Skill } from "./skill.enum"
 
 @Injectable({
   providedIn: "root"
@@ -119,9 +64,8 @@ export class HeroService {
 
   private getSkills(count: number): string[] {
     let skills: string[] = [];
-    let i;
 
-    for (i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
       skills.push(this.getRandomSkill());
     }
 
@@ -129,7 +73,7 @@ export class HeroService {
   }
 
   private getRandomSkill(): string {
-    return SKILL_TAGS[Math.floor(Math.random() * SKILL_TAGS.length)];
+    return Skill[Math.floor(Math.random() * Object.keys(Skill).length)];
   }
 
   private log(message: string) {
