@@ -6,12 +6,13 @@ import { catchError, map, tap } from "rxjs/operators";
 import { Hero } from "./hero";
 import { MessageService } from "./message.service";
 import { Skill } from "./skill.enum"
+import { env } from './env';
 
 @Injectable({
   providedIn: "root"
 })
 export class HeroService {
-  private heroesUrl = "https://jsonplaceholder.typicode.com/users";
+  private heroesUrl = env.apiUrl;
 
   constructor(
     private messageService: MessageService,
